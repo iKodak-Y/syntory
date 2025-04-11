@@ -1,0 +1,7 @@
+{
+  "name": "Syntory",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
