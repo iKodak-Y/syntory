@@ -1,0 +1,8 @@
+<ion-tabs mode="ios">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button *ngFor="let objMenu of menuItems" [tab]="getTabName(objMenu.url)" [routerLink]="objMenu.url" routerDirection="root">
+      <ion-icon [name]="objMenu.icon"></ion-icon>
+      <ion-label>{{objMenu.nombre}}</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

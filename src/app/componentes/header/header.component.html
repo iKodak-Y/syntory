@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header-container">
+      <img src="assets/icon/favicon.png" alt="Logo" class="header-logo">
+      <ion-title>{{titulo}}</ion-title>
+      <div class="action-button" *ngIf="botonConfig.mostrar">
+        <ion-button (click)="ejecutarAccion()" fill="solid" color="primary">
+          <ion-icon *ngIf="botonConfig.icono" [name]="botonConfig.icono"></ion-icon>
+          {{botonConfig.texto}}
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>

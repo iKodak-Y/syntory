@@ -1,0 +1,53 @@
+<ion-content>
+  <div class="login-container">
+    <!-- Logo y Encabezado -->
+    <div class="login-header animate__animated animate__fadeIn">
+      <div class="logo-container animate__animated animate__bounceIn">
+        <img src="assets/icon/favicon.png" alt="Logo" class="app-logo" />
+      </div>
+      <h1>FacturaPro</h1>
+      <p class="subtitle">Sistema de Facturación Electrónica</p>
+    </div>
+
+    <!-- Formulario -->
+    <form class="login-form animate__animated animate__fadeIn" (ngSubmit)="onSubmit()">
+      <div class="input-container">
+        <ion-item lines="none" class="custom-input">
+          <ion-icon slot="start" name="person"></ion-icon>
+          <ion-label position="floating">Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="username" name="username"
+            autocomplete="username"></ion-input>
+          <ion-icon *ngIf="username" slot="end" name="close-circle" class="clear-icon"
+            (click)="clearUsername()"></ion-icon>
+        </ion-item>
+      </div>
+
+      <div class="input-container">
+        <ion-item lines="none" class="custom-input">
+          <ion-icon slot="start" name="lock-closed"></ion-icon>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input [type]="passwordVisible ? 'text' : 'password'" [(ngModel)]="password" name="password"
+            autocomplete="current-password"></ion-input>
+          <ion-icon slot="end" [name]="passwordVisible ? 'eye' : 'eye-off'" class="toggle-password"
+            (click)="togglePasswordVisibility()"></ion-icon>
+        </ion-item>
+      </div>
+
+      <div class="remember-me">
+        <ion-checkbox labelPlacement="end">Recordar usuario</ion-checkbox>
+      </div>
+
+      <ion-button expand="block" class="login-button" type="submit">
+        INGRESAR
+      </ion-button>
+
+      <div class="forgot-password">
+        <span (click)="goToForgotPassword()">¿Olvidó su contraseña?</span>
+      </div>
+    </form>
+
+    <div class="footer-info">
+      <span>v{{ appVersion }} | {{ currentYear }} © FacturaPro</span>
+    </div>
+  </div>
+</ion-content>

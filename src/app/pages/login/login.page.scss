@@ -1,0 +1,276 @@
+@import 'animate.css/animate.min.css';
+
+:host {
+    --app-primary: #1e3c72;
+    --app-secondary: #2a5298;
+    --app-accent: #4fc3f7;
+    --text-color: #ffffff;
+    --input-bg: rgba(255, 255, 255, 0.15);
+    --input-active-bg: rgba(255, 255, 255, 0.2);
+    --button-bg: #ffffff;
+    --button-color: #1e3c72;
+    --button-disabled-bg: rgba(255, 255, 255, 0.7);
+}
+
+ion-content {
+    --background: linear-gradient(135deg, var(--app-primary) 0%, var(--app-secondary) 100%);
+    --keyboard-offset: 0px !important;
+}
+
+.login-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+}
+
+.login-header {
+    width: 100%;
+    margin-bottom: 36px;
+
+    h1 {
+        color: var(--text-color);
+        font-size: 28px;
+        margin: 16px 0 8px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 16px;
+        margin: 0;
+    }
+}
+
+.logo-container {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+    .app-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.login-form {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.input-container {
+    margin-bottom: 16px;
+}
+
+.custom-input {
+    --background: var(--input-bg);
+    --background-focused: var(--input-active-bg);
+    --border-radius: 12px;
+    --border-color: transparent;
+    --border-style: none;
+    --highlight-height: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+
+    &::part(native) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    ion-label {
+        --color: rgba(255, 255, 255, 0.9);
+        margin-left: 52px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    ion-input {
+        --color: white;
+        --placeholder-color: rgba(255, 255, 255, 0.7);
+        --padding-start: 52px;
+        --padding-end: 16px;
+        font-size: 16px;
+        min-height: 56px;
+
+        &::part(input) {
+            margin-left: 0;
+            padding-left: 0;
+        }
+    }
+
+    ion-icon {
+        color: rgba(255, 255, 255, 0.9);
+
+        &[slot="start"] {
+            font-size: 20px;
+            margin: 0 16px;
+            min-width: 20px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        &[slot="end"] {
+            font-size: 20px;
+            margin-right: 16px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .clear-icon,
+    .toggle-password {
+        color: rgba(255, 255, 255, 0.7);
+        z-index: 3;
+    }
+}
+
+.remember-me {
+    text-align: left;
+    margin-bottom: 24px;
+
+    ion-checkbox {
+        --size: 18px;
+        --checkbox-background: transparent;
+        --checkbox-background-checked: var(--app-accent);
+        --border-color: rgba(255, 255, 255, 0.5);
+        --border-color-checked: var(--app-accent);
+        --border-radius: 4px;
+        --checkmark-color: white;
+
+        &::part(container) {
+            margin-right: 10px;
+        }
+
+        &::part(label) {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 14px;
+            margin-left: 8px;
+        }
+    }
+}
+
+.login-button {
+    --background: var(--button-bg);
+    --background-hover: #f0f0f0;
+    --background-activated: #e8e8e8;
+    --background-focused: #f0f0f0;
+    --color: var(--button-color);
+    --border-radius: 12px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    height: 56px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &[disabled] {
+        --background: var(--button-disabled-bg);
+        --color: rgba(30, 60, 114, 0.5);
+    }
+}
+
+.forgot-password {
+    margin-top: 4px;
+    margin-bottom: 16px;
+
+    span {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 14px;
+        cursor: pointer;
+        transition: color 0.2s ease;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer-info {
+    margin-top: auto;
+    padding-top: 32px;
+
+    span {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 12px;
+    }
+}
+
+// Ajustes para pantallas pequeñas
+@media (max-height: 600px) {
+    .login-container {
+        justify-content: center;
+        padding-top: 20px;
+    }
+
+    .logo-container {
+        width: 80px;
+        height: 80px;
+        padding: 16px;
+    }
+
+    .login-header {
+        margin-bottom: 24px;
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+        }
+    }
+
+    .footer-info {
+        margin-top: 24px;
+        position: relative;
+    }
+}
+
+// Animaciones
+.login-header {
+    animation-duration: 1s;
+}
+
+.logo-container {
+    animation-duration: 1.2s;
+}
+
+.login-form {
+    animation-duration: 0.8s;
+}

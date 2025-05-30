@@ -34,4 +34,31 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+//@import '@ionic/angular/css/palettes/dark.system.css';
+
+/* Aplicar la fuente a toda la app */
+ion-content,
+ion-header,
+ion-footer,
+ion-toolbar,
+ion-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
+  font-family: var(--ion-font-family);
+}
+
+/* Personalización adicional para elementos de tarjeta */
+ion-card {
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+ion-title {
+  font-size: 1.4rem;
+}

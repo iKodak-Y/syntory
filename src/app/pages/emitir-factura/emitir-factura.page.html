@@ -1,0 +1,231 @@
+<app-header [titulo]="'Syntory'" [botonConfig]="{
+    mostrar: false,
+    texto: '',
+    icono: ''
+  }">
+</app-header>
+
+<ion-content class="ion-padding">
+  <h2 class="ion-margin">Emitir Nueva Factura</h2>
+  <div>
+    <div mode="ios">
+      <!-- Formulario Emisor de la factura -->
+      <ion-list>
+        <ion-item>
+          <ion-select labelPlacement="stacked" label="Establecimiento:*" interface="popover" placeholder="Seleccione"
+            *ngFor="let emisor of emisores">
+            <ion-select-option>{{emisor.nombre_comercial}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-select labelPlacement="stacked" label="Nombre Comercial:*" interface="popover" placeholder="Seleccione">
+            <ion-select-option>Ejemplo</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-label>Fecha de Emisión:*</ion-label>
+          </ion-row>
+          <ion-row slot="end">
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime presentation="date" id="datetime"></ion-datetime>
+              </ng-template>
+            </ion-modal>
+          </ion-row>
+        </ion-item>
+        <ion-item>
+          <ion-select labelPlacement="stacked" label="Punto de Emisión:*" interface="popover" placeholder="Seleccione">
+            <ion-select-option>Ejemplo</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <!-- Forulario adquirente -->
+    <br>
+    <div>
+      <ion-item-divider mode="ios" color="primary">
+        <ion-label>Adquirente: </ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-input label="Identificación:*" placeholder="RUC / CI / Pasaporte" labelPlacement="stacked">
+          <ion-button slot="end" fill="clear">
+            <ion-icon slot="icon-only" name="search"></ion-icon>
+          </ion-button>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Razón Social:*" labelPlacement="stacked"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Dirección:" labelPlacement="stacked"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Teléfono:" labelPlacement="stacked"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Correo Electrónico:*" labelPlacement="stacked"></ion-input>
+      </ion-item>
+    </div>
+    <br>
+    <div mode="ios">
+      <ion-item-divider color="primary">
+        <ion-label>Detalle: </ion-label>
+      </ion-item-divider>
+    </div>
+    <div>
+      <!-- Contenedor para el detalle de la factura -->
+      <div>
+        <!-- Busqueda -->
+        <br>
+        <ion-label class="margen">Código / Descripción:</ion-label>
+        <ion-searchbar mode="ios" show-clear-button="always" clear-icon="trash-bin"></ion-searchbar>
+
+
+
+      </div>
+      <div class="divisor">
+        <!-- Tabla de productos -->
+        <div class="table-container border">
+          <table>
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Cantidad</th>
+                <th>Descripción</th>
+                <th>Precio Unitario</th>
+                <th>Tarifa</th>
+                <th>Descuento</th>
+                <th>Valor Total</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ejemplo</td>
+                <td>ejemplo</td>
+                <td>ejemplo asdasdasddasda</td>
+                <td>ejemplo</td>
+                <td>ejemplo</td>
+                <td>ejemplo</td>
+                <td>ejemplo</td>
+                <td><ion-button slot="end" fill="clear">
+                    <ion-icon slot="icon-only" name="trash-bin"></ion-icon>
+                  </ion-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="divisor">
+        <!-- Detalle de la factura -->
+        <p>Totales</p>
+        <div class="border table-container">
+          <table>
+            <tbody>
+              <tr>
+                <th>Detalle</th>
+                <th>Valores</th>
+              </tr>
+              <tr>
+                <td>Subtotal sin impuestos:</td>
+                <td>100.00</td>
+              </tr>
+              <tr>
+                <td>Subtotal 15%:</td>
+                <td>100.00</td>
+              </tr>
+              <tr>
+                <td>IVA 15%:</td>
+                <td>15.00</td>
+              </tr>
+              <tr>
+                <td>Valor a pagar:</td>
+                <td>115.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="divisor">
+        <!-- Forma de pago -->
+        <p>Formas de Pago:</p>
+        <div class="table-container border">
+          <table>
+            <tbody>
+              <tr>
+                <th>Forma de Pago</th>
+                <th>Valor</th>
+                <th>Plazo</th>
+                <th>Tiempo</th>
+                <th>Acciones</th>
+              </tr>
+              <tr>
+                <td>SIN UTILIZACION DE SISTEMAS CONTABLE - 005</td>
+                <td>100.00</td>
+                <td>1</td>
+                <td>Meses</td>
+                <td><ion-button slot="end" fill="clear">
+                    <ion-icon slot="icon-only" name="trash-bin"></ion-icon>
+                  </ion-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="botones-formaPago">
+          <ion-button>Efectivo
+            <ion-icon name="eye" slot="start"></ion-icon>
+          </ion-button>
+          <ion-button>Tarjeta de débito
+            <ion-icon name="eye" slot="start"></ion-icon>
+          </ion-button>
+          <ion-button>Tarjeta de drédito
+            <ion-icon name="eye" slot="start"></ion-icon>
+          </ion-button>
+          <ion-button>Añadir forma de pago
+            <ion-icon name="eye" slot="start"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </div>
+    <div class="divisor">
+      <!-- Tabla nota adicional -->
+      <p>Campos Adicionales</p>
+      <div class="table-container border">
+        <table>
+          <tbody>
+            <tr>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Acción</th>
+            </tr>
+            <tr>
+              <td>Ejemplo</td>
+              <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ab dignissimos, porro sequi earum
+                perspiciatis.</td>
+              <td><ion-button slot="end" fill="clear">
+                  <ion-icon slot="icon-only" name="trash-bin"></ion-icon>
+                </ion-button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="botones-accion">
+      <!-- Botones de accion -->
+      <div class="btn">
+        <ion-button (click)="volver()" color="danger">
+          <ion-icon name="caret-back"></ion-icon>
+          Volver
+        </ion-button>
+      </div>
+      <div class="btn">
+        <ion-button color="success">
+          <ion-icon name="send"></ion-icon>
+          Firmar y Enviar
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,56 @@
+p {
+    color: rgb(100 116 139);
+}
+
+.border {
+    border-width: 1px;
+    border-radius: 0.5rem;
+    border-color: rgba(100, 116, 139, 0.5);
+    border-style: solid;
+}
+
+.margen {
+    margin: 1rem;
+}
+
+.divisor {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #818181;
+    text-align: center;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+
+.botones-formaPago ion-button {
+    margin: 0.3rem 0.3rem 0 0;
+    font-size: 0.7rem;
+}
+
+
+.botones-accion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

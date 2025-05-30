@@ -1,2 +1,33 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --ion-color-primary: #4361ee;
+  --ion-color-primary-rgb: 67, 97, 238;
+  --ion-color-primary-contrast: #ffffff;
+  
+  --ion-color-secondary: #3f37c9;
+  --ion-color-secondary-rgb: 63, 55, 201;
+  --ion-color-secondary-contrast: #ffffff;
+  
+  --ion-color-tertiary: #6366f1;
+  --ion-color-tertiary-rgb: 99, 102, 241;
+  --ion-color-tertiary-contrast: #ffffff;
+  
+  --ion-color-success: #10b981;
+  --ion-color-success-rgb: 16, 185, 129;
+  --ion-color-success-contrast: #ffffff;
+  
+  --ion-color-warning: #fbbf24;
+  --ion-color-warning-rgb: 251, 191, 36;
+  --ion-color-warning-contrast: #000000;
+  
+  --ion-color-danger: #ef4444;
+  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  
+  --ion-font-family: 'Poppins', sans-serif;
+}
+
+
